@@ -1,0 +1,15 @@
+# Python and Django files
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Django static and media files
+/static/
+media/
+
+# VS Code settings
+.vscode/
+
+# Environment variables file
+.env
