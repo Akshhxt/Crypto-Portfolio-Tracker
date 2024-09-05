@@ -14,7 +14,7 @@ A Django-based web application that tracks cryptocurrency prices using data from
 - **Backend**: Django, Django REST Framework
 - **Frontend**: HTML, CSS, JavaScript (Bootstrap for styling)
 - **Authentication**: JWT (via Django REST Framework SimpleJWT)
-- **Database**: SQLite (default for development, but you can switch to PostgreSQL or MySQL)
+- **Database**: SQLite 
 
 ## API Endpoints
 
