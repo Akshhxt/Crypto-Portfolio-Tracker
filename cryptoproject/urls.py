@@ -16,14 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from portfolio.views import home 
+from portfolio.views import home  # Make sure this import is correct
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
 
 urlpatterns = [
-    path('', home, name='home'),  # Map the root URL to the home view
+    path('', home, name='home'),  # This serves the HTML template at the root URL
+    path('', include('portfolio.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('portfolio.urls')),  # Include URLs from the 'portfolio' app
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

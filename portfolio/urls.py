@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import FetchCryptoData, CryptoListView
+from .views import home, FetchCryptoData, CryptoListView
 
 urlpatterns = [
+    path('', home, name='home'),
     # URL pattern for fetching and storing cryptocurrency data
-    path('fetch/', FetchCryptoData.as_view(), name='fetch_crypto_data'),
+    path('api/fetch/', FetchCryptoData.as_view(), name='fetch_crypto_data'),
 
     # URL pattern for listing all stored cryptocurrencies
-    path('cryptocurrencies/', CryptoListView.as_view(), name='crypto_list'),
+    path('api/cryptocurrencies/', CryptoListView.as_view(), name='crypto_list'),
 ]
