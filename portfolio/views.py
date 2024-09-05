@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,10 +9,9 @@ import requests
 from .models import Cryptocurrency
 from .serializers import CryptocurrencySerializer
 
-# Home view for the root URL
 def home(request):
-    return HttpResponse("<h1>Welcome to the Crypto Portfolio Tracker</h1><p>Use the API endpoints to interact with the application.</p>")
-
+    # Use render to serve the home.html template
+    return render(request, 'portfolio/home.html')
 # View to fetch cryptocurrency data from a third-party API
 class FetchCryptoData(APIView):
     permission_classes = [IsAuthenticated]
